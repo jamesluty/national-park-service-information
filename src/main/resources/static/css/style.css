@@ -1,0 +1,19 @@
+@charset "ISO-8859-1";
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+.mainWrapper {
+	margin: 50px;
+}
+
+.pageTitle {
+	text-align: center;
+}
+
+.subTitle {
+	margin-top: 75px;
+	text-align: center;
+}
