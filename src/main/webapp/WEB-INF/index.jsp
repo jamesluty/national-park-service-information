@@ -22,12 +22,21 @@
 		<h1 class="pageTitle">National Park Service Information</h1>
 		<h3 class="subTitle">Select a State</h3>
 		
-		<select>
-			<c:forEach var="state" items="${states }">
-				<option value="${state }">${state }</option>
-			</c:forEach>
-		</select>
-		<button class="btn btn-dark">Submit</button>
+		<div class="formDiv">
+			<form action="/switch" method="post">
+				<select name="state">
+					<c:forEach var="state" items="${states }">
+						<option value="${state }">${state }</option>
+					</c:forEach>
+				</select>
+				<select name="type">
+					<c:forEach var="searchType" items="${searchType }">
+						<option value="${searchType }">${searchType }</option>
+					</c:forEach>
+				</select>
+				<button class="btn btn-dark">Submit</button>
+			</form>
+		</div>
 	</div>
 </body>
 </html>

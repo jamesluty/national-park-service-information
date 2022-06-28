@@ -6,6 +6,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class ParksController {
@@ -16,11 +18,21 @@ public class ParksController {
 		states.add("WA");
 		states.add("OR");
 		states.add("ID");
-		for(String state: states) {
-			System.out.println(state);
-		}
+		ArrayList<String> searchType = new ArrayList<String>();
+		searchType.add("Campground");
+		searchType.add("Parks");
+		model.addAttribute("searchType", searchType);
 		model.addAttribute("states", states);
 		return "index.jsp";
+	}
+	
+	@PostMapping("/switch")
+	public String switcher(@RequestParam("state") String state, @RequestParam("type") String type) {
+		if(type.equals("Campground")) {
+			return "redirect:/campgrounds/" + state;
+		} else {
+			return "redirect:/parks/" + state;
+		}
 	}
 	
 	@GetMapping("/parks/{state}")
