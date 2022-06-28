@@ -19,7 +19,7 @@ public class ParksController {
 		states.add("OR");
 		states.add("ID");
 		ArrayList<String> searchType = new ArrayList<String>();
-		searchType.add("Campground");
+		searchType.add("Campgrounds");
 		searchType.add("Parks");
 		model.addAttribute("searchType", searchType);
 		model.addAttribute("states", states);
@@ -28,7 +28,7 @@ public class ParksController {
 	
 	@PostMapping("/switch")
 	public String switcher(@RequestParam("state") String state, @RequestParam("type") String type) {
-		if(type.equals("Campground")) {
+		if(type.equals("Campgrounds")) {
 			return "redirect:/campgrounds/" + state;
 		} else {
 			return "redirect:/parks/" + state;
