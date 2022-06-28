@@ -15,7 +15,7 @@ public class ParksController {
 		ArrayList<String> states = new ArrayList<String>();
 		states.add("WA");
 		states.add("OR");
-		states.add("CA");
+		states.add("ID");
 		for(String state: states) {
 			System.out.println(state);
 		}
