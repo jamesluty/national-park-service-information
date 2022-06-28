@@ -23,8 +23,9 @@ public class ParksController {
 		return "index.jsp";
 	}
 	
-	@GetMapping("/{state}")
+	@GetMapping("/parks/{state}")
 	public String state(@PathVariable("state") String state, Model model) {
 		return "parksList.jsp";
 	}
+	
 }
