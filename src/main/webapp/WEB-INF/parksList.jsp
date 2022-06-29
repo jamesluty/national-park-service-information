@@ -17,7 +17,18 @@
     <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 	<title>Title</title>
 </head>
-<body>
-	<h1>Testing main</h1>
+<body style="background-image: none;">
+	<div class="mainWrapper">
+		<h1 class="pageTitle">All parks in ${state }</h1>
+		<h3 class="subTitle">Select a park to see more Information</h3>
+		<div>
+			<p>${response }</p>
+			<c:forEach var="park" items="${allParks }">
+				<div>
+					
+				</div>
+			</c:forEach>
+		</div>
+	</div>
 </body>
 </html>
