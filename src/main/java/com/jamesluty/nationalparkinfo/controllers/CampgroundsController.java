@@ -12,5 +12,10 @@ public class CampgroundsController {
 	public String state(@PathVariable("state") String state, Model model) {
 		return "campgroundsList.jsp";
 	}
+	
+	@GetMapping("/campgrounds/{state}/{id}")
+	public String id(@PathVariable("state") String state, Model model) {
+		return "campgroundInfo.jsp";
+	}
 
 }
