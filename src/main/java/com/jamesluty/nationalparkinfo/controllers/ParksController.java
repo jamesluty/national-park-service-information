@@ -1,7 +1,10 @@
 package com.jamesluty.nationalparkinfo.controllers;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.Unirest;
@@ -54,7 +58,6 @@ public class ParksController {
 		String stateCode = "stateCode=" + state;
 		String api_key = "api_key=MZ7Qm9huvc8sZk2jzmwn9eA4ge9OLfzRwMV1pkPd";
 		HttpResponse<JsonNode> response = null;
-		System.out.println(host + "?" + stateCode + "&" + api_key);
 		try {
 			response = Unirest.get(host + "?" + stateCode + "&" + api_key)
 					.asJson();
@@ -62,7 +65,26 @@ public class ParksController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		model.addAttribute("response", response.getBody());
+		ObjectMapper mapper = new ObjectMapper();
+		
+		if(response != null) {
+//			Map<String, Object> result = mapper.convertValue(response.getBody().getObject().get("data"), new TypeReference<Map<String, Object>>(){});			
+//			model.addAttribute("response", result);
+//			System.out.println(result.get("data"));
+		} else {
+			model.addAttribute("response", "test");
+		}
+		ArrayList<Object> listParks = new ArrayList<Object>(); 
+		JSONArray items = (JSONArray) response.getBody().getObject().get("data");
+		for(Object item: items) {
+//			HashMap<String, Object> parksMap = new HashMap<String, Object>();
+			System.out.println(item.getClass().cast(item));
+			JSONObject thisItem = new JSONObject(item);
+			listParks.add(thisItem);
+//			System.out.println(thisItem);
+		}
+		System.out.println("hello");
+		model.addAttribute("allParks", listParks);
 		model.addAttribute("state", stateFull);
 		return "parksList.jsp";
 	}

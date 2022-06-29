@@ -25,7 +25,7 @@
 			<p>${response }</p>
 			<c:forEach var="park" items="${allParks }">
 				<div>
-					
+					<p>${park }</p>
 				</div>
 			</c:forEach>
 		</div>
