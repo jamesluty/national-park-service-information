@@ -21,9 +21,11 @@
 	</div>
 	<h1>Campgrounds Result Page</h1>
 	
-	<c:forEach var="campgrounds" items="${campgrounds}">
-	<c:out value="${campgrounds.name}"/>
-	</c:forEach>
+	<p>${response}</p>
+	<c:forEach var="campground" items="${allCampgrounds}">
+		<div>
+		</div>
+	</c:forEach> 
 	
 </body>
 </html>
