@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.json.JSONArray;
+import org.json.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -78,6 +79,8 @@ public class ParksController {
 		JSONArray items = (JSONArray) response.getBody().getObject().get("data");
 		for(Object item: items) {
 			String thisItem = item.toString();
+			JSONObject itemObj = new JSONObject(items);
+			System.out.println(itemObj.getClass().getSimpleName());
 			Map<String, Object> itemMap = new HashMap<String, Object>();
 			try {
 				itemMap = mapper.readValue(thisItem, new TypeReference<Map<String, Object>>(){});
