@@ -72,7 +72,7 @@ public class ParksController {
 		}
 		
 		ObjectMapper mapper = new ObjectMapper();
-		ArrayList<Object> listParks = new ArrayList<Object>(); 
+		ArrayList<Object> listNames = new ArrayList<Object>(); 
 		JSONArray items = (JSONArray) response.getBody().getObject().get("data");
 		for(Object item: items) {
 			String thisItem = item.toString();
@@ -88,11 +88,10 @@ public class ParksController {
 				System.out.println(e);
 				e.printStackTrace();
 			}
-			listParks.add(itemMap.get("addresses"));
-			System.out.println(itemMap.get("name"));
+			listNames.add(itemMap.get("name"));
 		}
 		
-		model.addAttribute("allParks", listParks);
+		model.addAttribute("allName", listNames);
 		model.addAttribute("state", stateFull);
 		return "parksList.jsp";
 	}

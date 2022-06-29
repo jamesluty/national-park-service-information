@@ -22,7 +22,6 @@
 		<h1 class="pageTitle">All parks in ${state}</h1>
 		<h3 class="subTitle">Select a park to see more Information</h3>
 		<div>
-			<p>${response}</p>
 			<c:forEach var="park" items="${allParks}">
 				<div>
 					<p>${park }</p>
