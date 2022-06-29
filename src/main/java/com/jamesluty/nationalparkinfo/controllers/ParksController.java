@@ -57,45 +57,41 @@ public class ParksController {
 		} else {
 			stateFull = "Idaho";
 		}
+		
 		String host = "https://developer.nps.gov/api/v1/parks";
 		String stateCode = "stateCode=" + state;
 		String api_key = "api_key=MZ7Qm9huvc8sZk2jzmwn9eA4ge9OLfzRwMV1pkPd";
 		HttpResponse<JsonNode> response = null;
+		
 		try {
 			response = Unirest.get(host + "?" + stateCode + "&" + api_key)
 					.asJson();
 		} catch (UnirestException e) {
-			// TODO Auto-generated catch block
+			System.out.println(e);
 			e.printStackTrace();
 		}
-		ObjectMapper mapper = new ObjectMapper();
 		
-		if(response != null) {
-//			Map<String, Object> result = mapper.convertValue(response.getBody().getObject().get("data"), new TypeReference<Map<String, Object>>(){});			
-//			model.addAttribute("response", result);
-//			System.out.println(result.get("data"));
-		} else {
-			model.addAttribute("response", "test");
-		}
+		ObjectMapper mapper = new ObjectMapper();
 		ArrayList<Object> listParks = new ArrayList<Object>(); 
 		JSONArray items = (JSONArray) response.getBody().getObject().get("data");
 		for(Object item: items) {
-//			HashMap<String, Object> parksMap = new HashMap<String, Object>();
 			String thisItem = item.toString();
 			Map<String, Object> itemMap = new HashMap<String, Object>();
 			try {
 				itemMap = mapper.readValue(thisItem, new TypeReference<Map<String, Object>>(){});
 			} catch (JsonMappingException e) {
 				// TODO Auto-generated catch block
+				System.out.println(e);
 				e.printStackTrace();
 			} catch (JsonProcessingException e) {
 				// TODO Auto-generated catch block
+				System.out.println(e);
 				e.printStackTrace();
 			}
-			listParks.add(itemMap.get("name"));
+			listParks.add(itemMap.get("addresses"));
 			System.out.println(itemMap.get("name"));
 		}
-		System.out.println("hello");
+		
 		model.addAttribute("allParks", listParks);
 		model.addAttribute("state", stateFull);
 		return "parksList.jsp";
