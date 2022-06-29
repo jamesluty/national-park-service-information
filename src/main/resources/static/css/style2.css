@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+.campgrounds-bg {
+	background-image: url("https://images6.alphacoders.com/661/661681.jpg");
+	background-size: cover;
+}
+
+.nav-bar {
+	padding: 10px;
+}
+
+.buttons {
+	padding: 5px 10px;
+	text-decoration: none;
+	border-radius: 10px;
+}
