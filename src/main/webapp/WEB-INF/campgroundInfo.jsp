@@ -17,7 +17,8 @@
 </head>
 <body class="campgrounds-bg">
 	<div class="nav-bar d-flex justify-content-end">
-		<button class="buttons"><a href="/" class="buttons">Back</a></button>
+		<button class="buttons"><a href="/" class="buttons">Home</a></button>
+		<button class="buttons"><a href="/campgrounds/${state}" class="buttons">Back</a></button>
 	</div>
 	<h1>Campground Info Page</h1>
 </body>

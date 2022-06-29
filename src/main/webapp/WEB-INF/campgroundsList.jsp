@@ -17,12 +17,12 @@
 </head>
 <body class="campgrounds-bg">
 	<div class="nav-bar d-flex justify-content-end">
-		<button class="buttons"><a href="/" class="buttons">Back</a></button>
+		<button class="buttons"><a href="/" class="buttons">Home</a></button>
 	</div>
 	<h1>Campgrounds Result Page</h1>
 	
-	<c:forEach var="campground" items="${campground}">
-	<c:out value="${campground.name}"/>
+	<c:forEach var="campgrounds" items="${campgrounds}">
+	<c:out value="${campgrounds.name}"/>
 	</c:forEach>
 	
 </body>
