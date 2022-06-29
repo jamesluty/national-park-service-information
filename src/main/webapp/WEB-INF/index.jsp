@@ -23,7 +23,7 @@
 		<h3 class="subTitle">Select a State</h3>
 		
 		<div class="formDiv">
-			<form action="/switch" method="post">
+			<form class="switchForm" action="/switch" method="post">
 				<select name="state">
 					<c:forEach var="state" items="${states }">
 						<option value="${state }">${state }</option>

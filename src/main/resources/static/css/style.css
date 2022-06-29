@@ -9,16 +9,33 @@
 	margin: 50px;
 }
 
+body {
+	background-image: url("https://morethanjustparks.com/wp-content/uploads/2021/06/crater-lake.jpg");
+	background-size: cover;
+}
+
 .pageTitle {
 	text-align: center;
 }
 
 .subTitle {
 	margin-top: 75px;
+	margin-bottom: 20px;
 	text-align: center;
 }
 
 .formDiv {
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
+}
+
+.switchForm {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 15%;
+}
+
+.switchForm select {
+	margin-bottom: 10px;
 }
