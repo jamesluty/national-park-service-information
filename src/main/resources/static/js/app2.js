@@ -13,16 +13,24 @@ async function getCampgrounds(){
 async function renderCampgrounds(){
 	let campgrounds = await getCampgrounds();
 	let html = '';
+	
+
 	campgrounds.forEach(campground => {
+		let images = campground.images;
+		let image = "";
+		if (images[0]){
+			image = images[0].url;
+			console.log(image)
+		}
 		let htmlSegment = 
 			`<div class="campground">
-				<img class="listImg" src="${campground.images[0].url}"/>
+				<img class="listImg" src="${image}" alt="No Image Available"/>
 				<div class="listDetails">
 					<h2 class="listTitle">${campground.name}</h2>
 					<p>${campground.reservationInfo}</p>
 					<p>${campground.description}</p>
 					<div class="btnDiv">
-						<a class="btn btn-dark" href="/campgrounds/details/${campground.states}">View details</a>
+						<a class="btn btn-dark" href="/campgrounds/details/${campground.state}">View details</a>
 					</div>						
 				</div>
 			</div>`;

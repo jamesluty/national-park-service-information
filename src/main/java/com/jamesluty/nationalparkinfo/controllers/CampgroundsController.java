@@ -20,6 +20,7 @@ public class CampgroundsController {
 			stateFull = "Idaho";
 		}
 		model.addAttribute("state", stateFull);
+		model.addAttribute("stateAbr", state);
 		
 		return "campgroundsList.jsp";
 	}
