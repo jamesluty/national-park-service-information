@@ -33,6 +33,7 @@ public class APIController {
 		
 		return items.toString();
 	}
+	
 	@RequestMapping("/api/parks/details/{parkCode}")
 	public String parkDetails(@PathVariable("parkCode") String parkCode) {
 		String host = "https://developer.nps.gov/api/v1/parks";
