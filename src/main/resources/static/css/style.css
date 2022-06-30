@@ -39,3 +39,28 @@ body {
 .switchForm select {
 	margin-bottom: 10px;
 }
+
+.park {
+	border: 3px solid black;
+	display: flex;
+	height: 250px;
+	margin-bottom: 20px;
+}
+
+.listImg {
+	height: 100%;
+	width: 325px;
+}
+
+.listDetails {
+	padding: 20px;
+}
+
+.listTitle {
+	text-align: center;
+}
+
+.btnDiv {
+	display: flex;
+	justify-content: center;
+}

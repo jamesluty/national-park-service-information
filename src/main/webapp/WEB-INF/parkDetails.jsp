@@ -15,14 +15,9 @@
     <link rel="stylesheet" href="/css/style.css"> <!-- change to match your file/naming structure -->
     <script src="/webjars/jquery/jquery.min.js"></script>
     <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
-	<title>Parks List</title>
+	<title>Park Details</title>
 </head>
-<body style="background-image: none;">
-	<div class="mainWrapper">
-		<h1 class="pageTitle">All parks in <span id=state>${state}</span></h1>
-		<h3 class="subTitle">Select a park to see more Information</h3>
-		<div class="container"></div>
-	</div>
-	<script src="/js/app.js"></script>
+<body>
+	<h1>Testing main</h1>
 </body>
 </html>
