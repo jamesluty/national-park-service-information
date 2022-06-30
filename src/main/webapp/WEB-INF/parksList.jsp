@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="/css/style.css"> <!-- change to match your file/naming structure -->
     <script src="/webjars/jquery/jquery.min.js"></script>
     <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
-	<title>Parks List</title>
+	<title>National Parks</title>
 </head>
 <body class="parks-bg">
 	<div class="homeLink">

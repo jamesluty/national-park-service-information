@@ -57,6 +57,7 @@
 }
 
 .listImg {
+	align-items: center;
 	height: 100%;
 	width: 350px;
 }
