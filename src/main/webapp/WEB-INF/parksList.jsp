@@ -26,6 +26,6 @@
 		<h3 class="subTitle">Select a park to see more Information</h3>
 		<div class="container"></div>
 	</div>
-	<script src="/js/app.js"></script>
+	<script src="/js/parkList.js"></script>
 </body>
 </html>

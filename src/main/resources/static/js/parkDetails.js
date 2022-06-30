@@ -2,10 +2,10 @@
  * 
  */
 async function getParks(){
-	let state = document.getElementById("parkCode").innerText;
+	let parkCode = document.getElementById("parkCode").innerText;
 	
 	try {
-		let res = await fetch("/api/parks/" + state.substring(0,2));
+		let res = await fetch("/api/parks/details/" + parkCode);
 		return await res.json();
 	} catch (error){
 		console.log(error);
