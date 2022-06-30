@@ -20,13 +20,13 @@
 	<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
 <title>Pacific Northwest Campgrounds</title>
 </head>
-<body class="campgrounds-bg">
+<body class="campgrounds-bg text-white">
 	<div class="nav-bar d-flex justify-content-end">
 		<button class="buttons"><a href="/" class="buttons">Home</a></button>
 	</div>
 	<div class="mainWrapper">
 		<h1 class="pageTitle">All Campgrounds in <span id=state>${state}</span></h1>
-		<h3 class="subTitle">Select a Campground to see more Information</h3>
+		<h4 class="subTitle">Select a Campground to see more Information</h4>
 		<div class="container"></div>
 	</div>
 	<script src="/js/app2.js"></script>

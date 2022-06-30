@@ -18,7 +18,8 @@ async function renderCampgrounds(){
 			`<div class="campground">
 				<img class="listImg" src="${campground.images[0].url}"/>
 				<div class="listDetails">
-					<h1 class="listTitle">${campground.name}</h1>
+					<h2 class="listTitle">${campground.name}</h2>
+					<p>${campground.reservationInfo}</p>
 					<p>${campground.description}</p>
 					<div class="btnDiv">
 						<a class="btn btn-dark" href="/campgrounds/details/${campground.states}">View details</a>

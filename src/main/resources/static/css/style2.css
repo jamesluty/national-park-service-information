@@ -10,8 +10,8 @@
 }
 
 .campgrounds-bg {
-	background-image: url("https://images6.alphacoders.com/661/661681.jpg");
-	background-size: cover;
+	background-image: url("https://media.cntraveler.com/photos/5fbbdc25bead4eb22be793ae/16:9/w_2560%2Cc_limit/WinterCamping-2020-GettyImages-628134586.jpg");
+ 	background-size: cover; 
 }
 
 .nav-bar {
@@ -29,13 +29,14 @@
 .campground {
 	border: 3px solid black;
 	display: flex;
-	height: 250px;
+	height: 350px;
 	margin-bottom: 20px;
 }
 
 .listImg {
-	height: 100%;
+	height: 80%;
 	width: 325px;
+	margin: 25px;
 }
 
 .listDetails {
