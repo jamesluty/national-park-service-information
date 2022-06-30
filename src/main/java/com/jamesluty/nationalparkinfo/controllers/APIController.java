@@ -32,4 +32,24 @@ public class APIController {
 		
 		return items.toString();
 	}
+	
+	@RequestMapping("/api/campgrounds/{state}")
+	public String campgrounds(@PathVariable("state") String state) {
+		String host = "https://developer.nps.gov/api/v1/campgrounds";
+		String stateCode = "stateCode=" + state;
+		String api_key = "api_key=MZ7Qm9huvc8sZk2jzmwn9eA4ge9OLfzRwMV1pkPd";
+		HttpResponse<JsonNode> response = null;
+		
+		try {
+			response = Unirest.get(host + "?" + stateCode + "&" + api_key)
+					.asJson();
+		} catch (UnirestException e) {
+			System.out.println(e);
+			e.printStackTrace();
+		}
+		
+		JSONArray items = (JSONArray) response.getBody().getObject().get("data");
+		
+		return items.toString();
+	}
 }
