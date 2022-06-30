@@ -19,13 +19,20 @@
 	<div class="nav-bar d-flex justify-content-end">
 		<button class="buttons"><a href="/" class="buttons">Home</a></button>
 	</div>
-	<h1>Campgrounds Result Page</h1>
+	<h1>${state} Campgrounds Result Page</h1>
 	
-	<p>${response}</p>
-	<c:forEach var="campground" items="${allCampgrounds}">
 		<div>
+			<c:forEach var="name" items="${allNames}">
+					<p>${name }</p>
+					<p>${url }</p>
+			</c:forEach>
+			<c:forEach var="name" items="${allDescriptions}">
+					<p>${description }</p>
+			</c:forEach>
+			<c:forEach var="name" items="${allUrls}">
+					<p>${url }</p>
+			</c:forEach>
 		</div>
-	</c:forEach> 
 	
 </body>
 </html>
