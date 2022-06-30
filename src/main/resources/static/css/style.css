@@ -12,6 +12,15 @@
 body {
 	background-image: url("https://morethanjustparks.com/wp-content/uploads/2021/06/crater-lake.jpg");
 	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+.parks-bg {
+	background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUMuKU-fT8d2ahkFlGjP2ltXjqaSlZMfXzYw&usqp=CAU");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
 
 .pageTitle {
@@ -49,11 +58,14 @@ body {
 
 .listImg {
 	height: 100%;
-	width: 325px;
+	width: 300px;
 }
 
 .listDetails {
+	color: black;
+	background-color: white;
 	padding: 20px;
+	opacity: 85%;
 }
 
 .listTitle {
@@ -63,4 +75,9 @@ body {
 .btnDiv {
 	display: flex;
 	justify-content: center;
+}
+
+.homeLink {
+	display: flex;
+	justify-content: end;
 }
