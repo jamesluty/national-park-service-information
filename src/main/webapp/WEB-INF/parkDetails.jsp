@@ -18,6 +18,11 @@
 	<title>Park Details</title>
 </head>
 <body>
-	<h1>Testing main</h1>
+	<div class="mainWrapper">
+		<h1>Testing</h1>
+		<p class="hidden">${parkCode }</p>
+	</div>
+	<div class="container"></div>
+	<script src="/js/parkDetails.js"></script>
 </body>
 </html>

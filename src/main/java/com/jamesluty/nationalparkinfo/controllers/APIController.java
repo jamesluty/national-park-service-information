@@ -1,6 +1,7 @@
 package com.jamesluty.nationalparkinfo.controllers;
 
 import org.json.JSONArray;
+import org.json.JSONObject;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,6 +23,25 @@ public class APIController {
 		
 		try {
 			response = Unirest.get(host + "?" + stateCode + "&" + api_key)
+					.asJson();
+		} catch (UnirestException e) {
+			System.out.println(e);
+			e.printStackTrace();
+		}
+		
+		JSONArray items = (JSONArray) response.getBody().getObject().get("data");
+		
+		return items.toString();
+	}
+	@RequestMapping("/api/parks/details/{parkCode}")
+	public String parkDetails(@PathVariable("parkCode") String parkCode) {
+		String host = "https://developer.nps.gov/api/v1/parks";
+		String park = "parkCode=" + parkCode;
+		String api_key = "api_key=MZ7Qm9huvc8sZk2jzmwn9eA4ge9OLfzRwMV1pkPd";
+		HttpResponse<JsonNode> response = null;
+		
+		try {
+			response = Unirest.get(host + "?" + park + "&" + api_key)
 					.asJson();
 		} catch (UnirestException e) {
 			System.out.println(e);

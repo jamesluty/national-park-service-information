@@ -50,8 +50,10 @@ public class ParksController {
 		return "parksList.jsp";
 	}
 	
-	@GetMapping("/parks/details/{state}")
-	public String parkDetails(@PathVariable("state") String state, Model model) {
+	@GetMapping("/parks/details/{parkCode}")
+	public String parkDetails(@PathVariable("parkCode") String parkCode, Model model) {
+		
+		model.addAttribute("parkCode", parkCode);
 		return "parkDetails.jsp";
 	}
 	

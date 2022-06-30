@@ -17,7 +17,7 @@
     <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 	<title>Escape Outdoors</title>
 </head>
-<body>
+<body class="main-bg">
 	<div class="mainWrapper">
 		<h1 class="pageTitle">Escape Outdoors</h1>
 		<h3 class="subTitle">Select a State</h3>
