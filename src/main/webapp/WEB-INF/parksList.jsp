@@ -13,20 +13,18 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/style.css"> <!-- change to match your file/naming structure -->
-    <script src="/js/app.js"></script>
     <script src="/webjars/jquery/jquery.min.js"></script>
     <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 	<title>Title</title>
 </head>
 <body style="background-image: none;">
 	<div class="mainWrapper">
-		<h1 class="pageTitle">All parks in ${state}</h1>
+		<h1 class="pageTitle">All parks in <span id=state>${state}</span></h1>
 		<h3 class="subTitle">Select a park to see more Information</h3>
-		<div>
-			<c:forEach var="name" items="${allNames}">
-					<p>${name }</p>
-			</c:forEach>
+		<div class="container">
+			
 		</div>
 	</div>
+	<script src="/js/app.js"></script>
 </body>
 </html>
