@@ -15,11 +15,11 @@
     <link rel="stylesheet" href="/css/style.css"> <!-- change to match your file/naming structure -->
     <script src="/webjars/jquery/jquery.min.js"></script>
     <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
-	<title>NPS Information</title>
+	<title>Escape Outdoors</title>
 </head>
 <body>
 	<div class="mainWrapper">
-		<h1 class="pageTitle">National Park Service Information</h1>
+		<h1 class="pageTitle">Escape Outdoors</h1>
 		<h3 class="subTitle">Select a State</h3>
 		
 		<div class="formDiv">

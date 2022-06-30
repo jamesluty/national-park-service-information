@@ -52,13 +52,13 @@ body {
 .park {
 	border: 3px solid black;
 	display: flex;
-	height: 250px;
+	height: 300px;
 	margin-bottom: 20px;
 }
 
 .listImg {
 	height: 100%;
-	width: 300px;
+	width: 350px;
 }
 
 .listDetails {
@@ -72,12 +72,13 @@ body {
 	text-align: center;
 }
 
-.btnDiv {
-	display: flex;
-	justify-content: center;
-}
-
 .homeLink {
 	display: flex;
 	justify-content: end;
+}
+
+.listHeader {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 30px;
 }

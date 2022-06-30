@@ -18,11 +18,13 @@ async function renderParks(){
 			`<div class="park">
 				<img class="listImg" src="${park.images[0].url}"/>
 				<div class="listDetails">
-					<h1 class="listTitle">${park.name}</h1>
+					<div class="listHeader">
+						<h1 class="listTitle">${park.name}</h1>
+						<div>
+							<a class="btn btn-dark" href="/parks/details/${park.states}">View details</a>
+						</div>						
+					</div>
 					<p>${park.description}</p>
-					<div class="btnDiv">
-						<a class="btn btn-dark" href="/parks/details/${park.states}">View details</a>
-					</div>						
 				</div>
 			</div>`;
 		html += htmlSegment;
