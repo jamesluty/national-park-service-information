@@ -25,9 +25,11 @@ public class CampgroundsController {
 		return "campgroundsList.jsp";
 	}
 	
-	@GetMapping("/campgrounds/{state}/{id}")
-	public String id(@PathVariable("state") String state, Model model) {		
-		return "campgroundInfo.jsp";
+	@GetMapping("/campgrounds/details/{parkCode}")
+	public String campgroundDetails(@PathVariable("parkCode") String parkCode, Model model) {		
+		
+		model.addAttribute("parkCode", parkCode);
+		return "campgroundDetails.jsp";
 	}
 
 }

@@ -29,7 +29,7 @@
 		<h4 class="subTitle">Select a Campground to see more Information</h4>
 		<div class="container"></div>
 	</div>
-	<script src="/js/app2.js"></script>
+	<script src="/js/campgroundsList.js"></script>
 	
 </body>
 </html>
