@@ -9,7 +9,7 @@
 	margin: 50px;
 }
 
-.campgrounds-bg {
+.campgroundsList-bg {
 	background-image: url("https://media.cntraveler.com/photos/5fbbdc25bead4eb22be793ae/16:9/w_2560%2Cc_limit/WinterCamping-2020-GettyImages-628134586.jpg");
  	background-size: cover;
 	background-repeat: no-repeat;
@@ -37,11 +37,14 @@
 
 .listImg {
 	height: 100%;
-	width: 300px;
+	width: 350px;
 }
 
 .listDetails {
+	color: black;
+	background-color: white;
 	padding: 20px;
+	opacity: 85%;
 	overflow: auto;
 }
 
@@ -52,4 +55,15 @@
 .btnDiv {
 	display: flex;
 	justify-content: center;
+}
+
+/****************  DETAILS CAMPGROUNDS Page *******************/
+
+#id {
+	display: none;
+}
+
+.detailImg {
+	height: 600px;
+	width: 100%;
 }

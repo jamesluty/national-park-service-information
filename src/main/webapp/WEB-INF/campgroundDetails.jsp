@@ -9,17 +9,22 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <!-- CSS Link -->
-	<link rel="stylesheet" type="text/css" href="/css/style2.css">
-	<script type="text/javascript" src="/js/app.js"></script>
-	
+	<link rel="stylesheet" type="text/css" href="/css/style2.css">	
 <!-- <!-- Bootstrap Link -->
 	<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
 </head>
-<body class="campgrounds-bg">
+<body class="">
 	<div class="nav-bar d-flex justify-content-end">
 		<button class="buttons"><a href="/" class="buttons">Home</a></button>
-		<button class="buttons"><a href="/campgrounds/${state}" class="buttons">Back</a></button>
+		<a class="btn btn-dark" href="/">Home</a>
 	</div>
-	<h1>Campground Info Page</h1>
+	<div class="container"></div>
+	
+	
+	
+	
+	<p id="id">${id }</p>
+	<!-- <!-- JavaScript Link -->	
+	<script type="text/javascript" src="/js/campgroundDetails.js"></script>
 </body>
 </html>

@@ -13,8 +13,6 @@ async function getCampgrounds(){
 async function renderCampgrounds(){
 	let campgrounds = await getCampgrounds();
 	let html = '';
-	
-
 	campgrounds.forEach(campground => {
 		let images = campground.images;
 		let image = "";
@@ -30,11 +28,12 @@ async function renderCampgrounds(){
 					<p>${campground.reservationInfo}</p>
 					<p>${campground.description}</p>
 					<div class="btnDiv">
-						<a class="btn btn-dark" href="/campgrounds/details/${campground.state}">View details</a>
+						<a class="btn btn-dark" href="/campgrounds/details/${campground.id}">View details</a>
 					</div>						
 				</div>
 			</div>`;
 		html += htmlSegment;
+
 	})
 	
 	let container = document.querySelector(".container");

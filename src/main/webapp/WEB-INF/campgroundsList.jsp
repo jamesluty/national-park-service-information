@@ -20,7 +20,7 @@
 	<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
 <title>Pacific Northwest Campgrounds</title>
 </head>
-<body class="campgrounds-bg text-white">
+<body class="campgroundsList-bg text-white">
 	<div class="nav-bar d-flex justify-content-end">
 		<button class="buttons"><a href="/" class="buttons">Home</a></button>
 	</div>
