@@ -12,13 +12,15 @@ async function getParks(){
 	}	
 }
 
+let images = [];
+let count = 0;
+
 async function renderParks(){
 	let parks = await getParks();
 	let html = '';
 	
 	parks.forEach(park => {
 		let activities = [];
-		let images = [];
 		let fees = "";
 		let topics = [];
 		let hours = "";
@@ -65,11 +67,15 @@ async function renderParks(){
 				<div class="listHeader">
 					<h1 class="listTitle">${park.fullName}</h1>
 					<div>
-						<button class="btn btn-dark" onclick="history.back()">Go Back</button>
+						<button class="btn btn-secondary" onclick="history.back()">Go Back</button>
 					</div>
 				</div>
 				<div class="imgDiv">
-					<img class="detailsImg" src="${park.images[0].url}"/>
+					<button onclick="imgLeft()">Prev</button>
+					<div id="rotateImg">
+						<img id="detailsImg" src="${park.images[count].url}"/>
+					</div>
+					<button onclick="imgRight()">Next</button>
 				</div>
 				<div class="listDetails">
 					<div class="detailDiv">
@@ -107,7 +113,7 @@ async function renderParks(){
 						<div class="pDiv">
 							<div>
 								<a class="link btn btn-outline-primary" href="${park.url}">Website</a><br>
-								<a class="link btn btn-outline-dark"" href="${park.directionsURL}">Directions</a><br>
+								<a class="link btn btn-outline-dark"" href="${park.directionsUrl}">Directions</a><br>
 							</div>
 							<p>Phone Number: ${park.contacts.phoneNumbers[0].phoneNumber}<br>
 							Email Address: ${park.contacts.emailAddresses[0].emailAddress}</p>
@@ -123,3 +129,31 @@ async function renderParks(){
 }
 
 renderParks();
+
+async function imgRight(){
+	let parks = await getParks();
+	let allImgs = parks[0].images;
+	if(count === allImgs.length - 1){
+		count = 0;
+	} else {
+		count++;	
+	}
+	
+	console.log(count);
+	let img = document.getElementById("detailsImg").src.replace(/(.*)+/g, allImgs[count].url);
+	console.log(img);
+}
+
+async function imgLeft(){
+	let parks = await getParks();
+	let allImgs = parks[0].images;
+	
+	if(count === 0){
+		count = allImgs.length - 1;
+	} else {
+		count--;
+	}
+	console.log(count);
+	let img = document.getElementById("detailsImg").innerHtml;
+	img = document.getElementById("detailsImg").innerHTML.replace();
+}
