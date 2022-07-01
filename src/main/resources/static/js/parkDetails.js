@@ -71,11 +71,11 @@ async function renderParks(){
 					</div>
 				</div>
 				<div class="imgDiv">
-					<button onclick="imgLeft()">Prev</button>
+					<button class="btn btn-secondary" onclick="imgLeft()">Prev</button>
 					<div id="rotateImg">
 						<img id="detailsImg" src="${park.images[count].url}"/>
 					</div>
-					<button onclick="imgRight()">Next</button>
+					<button class="btn btn-secondary" onclick="imgRight()">Next</button>
 				</div>
 				<div class="listDetails">
 					<div class="detailDiv">
@@ -140,8 +140,7 @@ async function imgRight(){
 	}
 	
 	console.log(count);
-	let img = document.getElementById("detailsImg").src.replace(/(.*)+/g, allImgs[count].url);
-	console.log(img);
+	document.getElementById("detailsImg").src = allImgs[count].url;
 }
 
 async function imgLeft(){
@@ -153,7 +152,7 @@ async function imgLeft(){
 	} else {
 		count--;
 	}
+	
 	console.log(count);
-	let img = document.getElementById("detailsImg").innerHtml;
-	img = document.getElementById("detailsImg").innerHTML.replace();
+	document.getElementById("detailsImg").src = allImgs[count].url;
 }
