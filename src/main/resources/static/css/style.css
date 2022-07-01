@@ -103,3 +103,24 @@
 	height: 400px;
 	width: 100%;
 }
+
+.detailDiv {
+	display: flex;
+}
+
+.detailDiv h3 {
+	flex: 1;
+}
+
+.detailDiv div, .detailDiv > p {
+	flex: 3;
+}
+
+.pDiv {
+	display: flex;
+	flex-direction: column;
+}
+
+.link {
+	margin-bottom: 10px;
+}

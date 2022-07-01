@@ -31,7 +31,8 @@ async function renderParks(){
 		})
 		park.entranceFees.forEach(fee => {
 			let feeHtml = 
-				`<p>${fee.title} - $${fee.cost}</p>`;
+				`<p><b>${fee.title}</b> - $${fee.cost}<br> 
+					${fee.description}</p>`;
 			fees += feeHtml;
 		})
 		park.topics.forEach(topic => {
@@ -40,19 +41,21 @@ async function renderParks(){
 		park.operatingHours.forEach(item => {
 			let itemHtml =
 			`<h3>${item.name}</h3>
-			<p>Sunday - ${item.standardHours.sunday}</p>
-			<p>Monday - ${item.standardHours.monday}</p>
-			<p>Tuesday - ${item.standardHours.tuesday}</p>
-			<p>Wednesday - ${item.standardHours.wednesday}</p>
-			<p>Thursday - ${item.standardHours.thursday}</p>
-			<p>Friday - ${item.standardHours.friday}</p>
-			<p>Saturday - ${item.standardHours.saturday}</p>`;
+			<p>Sunday - ${item.standardHours.sunday}<br>
+			Monday - ${item.standardHours.monday}<br>
+			Tuesday - ${item.standardHours.tuesday}<br>
+			Wednesday - ${item.standardHours.wednesday}<br>
+			Thursday - ${item.standardHours.thursday}<br>
+			Friday - ${item.standardHours.friday}<br>
+			Saturday - ${item.standardHours.saturday}</p>
+			<span class="description">***<i>${item.description}</i><span>
+			<p></p>`;
 			hours += itemHtml;
 		})
 		park.addresses.forEach(address => {
 			let adrHtml =
 			`<h3>${address.type}</h3>
-			<p>${address.line1}, ${address.city}, ${address.stateCode} ${address.postalCode}`;
+				<p>${address.line1}, ${address.city}, ${address.stateCode} ${address.postalCode}`;
 			addresses += adrHtml;
 		})
 		let strActivities = activities.toString().replaceAll(",", " ");
@@ -69,23 +72,47 @@ async function renderParks(){
 					<img class="detailsImg" src="${park.images[0].url}"/>
 				</div>
 				<div class="listDetails">
-					<h2>Park Details:</h2>
-					<p>${park.description}</p>
-					<h2>Activities:</h2>
-					<p>${strActivities}</p>
-					<h2>Topics:</h2>
-					<p>${strTopics}</p>
-					<h2>Entrance Fees:</h2>
-					<p>${fees}</p>
-					<h2>Operating Hours</h2>
-					<p>${hours}</p>
-					<h2>Addresses:</h2>
-					<p>${addresses}</p>
-					<h2>Park Information:</h2>
-					<p>Website: <a href="${park.url}">${park.url}</a><br>
-					Directions: <a href="${park.directionsURL}">Click for Directions</a><br>
-					Phone Number: ${park.contacts.phoneNumbers[0].phoneNumber}<br>
-					Email Address: ${park.contacts.emailAddresses[0].emailAddress}</p>
+					<div class="detailDiv">
+						<h3>Park Details:</h3>
+						<p>${park.description}</p>
+					</div>
+					<div class="detailDiv">
+						<h3>Activities:</h3>
+						<p>${strActivities}</p>
+					</div>
+					<div class="detailDiv">
+						<h3>Topics:</h3>
+						<p>${strTopics}</p>
+					</div>
+					<div class="detailDiv">
+						<h3>Entrance Fees:</h3>
+						<div class="pDiv">
+							${fees}
+						</div>
+					</div>
+					<div class="detailDiv">
+						<h3>Operating Hours:</h3>
+						<div class="pDiv">
+							${hours}
+						</div>
+					</div>
+					<div class="detailDiv">
+						<h3>Addresses:  </h3>
+						<div class="pDiv">
+							${addresses}
+						</div>
+					</div>
+					<div class="detailDiv">
+						<h3>Information:</h3>
+						<div class="pDiv">
+							<div>
+								<a class="link btn btn-outline-primary" href="${park.url}">Website</a><br>
+								<a class="link btn btn-outline-dark"" href="${park.directionsURL}">Directions</a><br>
+							</div>
+							<p>Phone Number: ${park.contacts.phoneNumbers[0].phoneNumber}<br>
+							Email Address: ${park.contacts.emailAddresses[0].emailAddress}</p>
+						</div>
+					</div>
 				</div>
 			</div>`;
 		html += htmlSegment;
