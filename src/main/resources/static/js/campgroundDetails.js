@@ -17,7 +17,14 @@ async function renderCampgrounds(){
 //	campgrounds.forEach(campground => {
 		let fees = "";
 		let hours = "";
-		let addresses = "";		
+		let addresses = "";
+		let images = campground.images;
+		let image = "";	
+		
+		if (images[0]){
+			image = images[0].url;
+			console.log(image)
+		}	
 		
 		campground.fees.forEach(fee => {
 			let feeHtml = 
