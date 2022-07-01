@@ -24,12 +24,15 @@ async function renderCampgrounds(){
 			`<div class="campground">
 				<img class="listImg" src="${image}" alt="No Image Available"/>
 				<div class="listDetails">
-					<h2 class="listTitle">${campground.name}</h2>
+					<div class="listHeader">			
+						<h2 class="listTitle">${campground.name}</h2>
+						<div class="btnDiv">
+							<a class="btn btn-dark" href="/campgrounds/details/${campground.id}">View details</a>
+						</div>
+					</div>
 					<p>${campground.reservationInfo}</p>
 					<p>${campground.description}</p>
-					<div class="btnDiv">
-						<a class="btn btn-dark" href="/campgrounds/details/${campground.id}">View details</a>
-					</div>						
+						
 				</div>
 			</div>`;
 		html += htmlSegment;

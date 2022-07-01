@@ -15,8 +15,8 @@
 </head>
 <body class="">
 	<div class="nav-bar d-flex justify-content-end">
-		<button class="buttons"><a href="/" class="buttons">Home</a></button>
-		<a class="btn btn-dark" href="/">Home</a>
+		<button class="btn btn-secondary" onclick="history.back()">Go Back</button>&nbsp
+		<a class="btn btn-secondary" href="/">Home</a>
 	</div>
 	<div class="container"></div>
 	

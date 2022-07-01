@@ -22,11 +22,10 @@
 </head>
 <body class="campgroundsList-bg text-white">
 	<div class="nav-bar d-flex justify-content-end">
-		<button class="buttons"><a href="/" class="buttons">Home</a></button>
+		<a class="btn btn-secondary" href="/">Home</a>
 	</div>
 	<div class="mainWrapper">
 		<h1 class="pageTitle">All Campgrounds in <span id=state>${state}</span></h1>
-		<h4 class="subTitle">Select a Campground to see more Information</h4>
 		<div class="container"></div>
 	</div>
 	<script src="/js/campgroundsList.js"></script>

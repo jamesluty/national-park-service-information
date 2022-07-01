@@ -15,9 +15,46 @@ async function renderCampgrounds(){
 	for (let campground of campgrounds) {
 		
 //	campgrounds.forEach(campground => {
-		let amenities = [];
+		let fees = "";
+		let hours = "";
+		let addresses = "";		
 		
-		let strAmenities = amenities.toString().replaceAll(",", ", ");
+		campground.fees.forEach(fee => {
+			let feeHtml = 
+				`<p>${fee.title} - $${fee.cost} <br>
+				${fee.description}</p>`;
+			fees += feeHtml;
+		})	
+
+		campground.operatingHours.forEach(item => {
+			let itemHtml =			
+			`Sunday - ${item.standardHours.sunday}<br>
+			Monday - ${item.standardHours.monday}<br>
+			Tuesday - ${item.standardHours.tuesday}<br>
+			Wednesday - ${item.standardHours.wednesday}<br>
+			Thursday - ${item.standardHours.thursday}<br>
+			Friday - ${item.standardHours.friday}<br>
+			Saturday - ${item.standardHours.saturday}<br>
+			<br>
+			<i>*** ${item.description}</i>`;
+			hours += itemHtml;
+		})
+		
+		campground.addresses.forEach(address => {
+			let adrHtml =
+			`<h5>${address.type}</h5>
+			${address.line1} ${address.line2}, ${address.city}, ${address.stateCode}, ${address.postalCode}`;
+			addresses += adrHtml;
+		})
+		
+		let amenities = 
+			`Toilets - <i>${campground.amenities.toilets}</i><br>
+			Internet Connectivity - <i>${campground.amenities.internetConnectivity}</i><br>
+			Showers - <i>${campground.amenities.showers}</i><br>
+			Potable Water - <i>${campground.amenities.potableWater}</i><br>
+			Firewood for Sale - <i>${campground.amenities.firewoodForSale}</i><br>`
+					
+		
 		let htmlSegment = 
 			`<div class="campgroundDetails">
 				<img class="detailImg" src="${campground.images[0].url}"/>
@@ -32,10 +69,29 @@ async function renderCampgrounds(){
 						</tr>
 						<tr>
 							<td>
-								<h5>Direction: </h5>
+								<h5>Overview: </h5>
+							</td>
+							<td>							
+								${campground.description}
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<h5>Operating Hours: </h5>
 							</td>
 							<td>
-								<p class="p-3">${campground.directionsOverview}</p>
+								<p class="mt-4 mb-4">${hours}</p>
+							</td>
+						</tr>						
+						<tr>
+							<td>
+								<h5>Reservation: </h5>
+							</td>
+							<td>
+								<p>${campground.reservationInfo}
+								<a class="btn btn-outline-primary" href="https://www.recreation.gov/camping/campgrounds/275085">Reserve</a>
+								<a class="btn btn-outline-dark" href="https://www.nps.gov/laro/planyourvisit/cg-regulations.htm">Regulations</a>
+								</p>
 							</td>
 						</tr>
 						<tr>
@@ -43,7 +99,7 @@ async function renderCampgrounds(){
 								<h5>Fee: </h5>
 							</td>
 							<td>
-								<p class="p-3">$${campground.fees[0].cost}</p>
+								<p>${fees}</p>
 							</td>
 						</tr>
 						<tr>
@@ -51,16 +107,29 @@ async function renderCampgrounds(){
 								<h5>Amenities: </h5>
 							</td>
 							<td>
-								<p class="p-3">${campground.fees[0].description}</p>
+								<p>${amenities}</p>
+							</td>
+						</tr>						
+						<tr>
+							<td>
+								<h5>Addresses: </h5>
+							</td>
+							<td>
+								<p>${addresses}</p>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<h5>Hours: </h5>
+								<h5>Information: </h5>
 							</td>
 							<td>
-								<p class="p-3">Wednesday: ${campground.operatingHours[0].standardHours.wednesday}<br>
-								Thursday: ${campground.operatingHours[0].standardHours.thursday}</p>
+								<a class="btn btn-outline-success"https://www.recreation.gov/camping/campgrounds/246855">Website</a><br>
+								<a class="btn btn-outline-warning mt-2"https://www.nps.gov/laro/planyourvisit/maps.htm">Directions</a><br>
+								<i>*** ${campground.directionsOverview}</i>
+								<br>
+								<br>
+								Phone Number: ${campground.contacts.phoneNumbers[0].phoneNumber}<br>
+								Email Address: ${campground.contacts.emailAddresses[0].emailAddress}</p>
 							</td>
 						</tr>						
 
