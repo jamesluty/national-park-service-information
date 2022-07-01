@@ -22,7 +22,7 @@
 		<a class="btn btn-light" href="/">Home</a>
 	</div>
 	<div class="mainWrapper">
-		<h1 class="pageTitle">All National Parks in <span id=state>${state}</span></h1>
+		<h1 class="pageTitle">National Parks in <span id=state>${state}</span></h1>
 		<h3 class="subTitle">Select a park to see more Information</h3>
 		<div class="container"></div>
 	</div>

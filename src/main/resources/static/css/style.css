@@ -74,16 +74,32 @@
 }
 
 .homeLink {
+	padding: 10px 10px 0px 0px;
 	display: flex;
 	justify-content: end;
 }
 
 .listHeader {
+	align-items: center;
 	display: flex;
 	justify-content: space-between;
 	margin-bottom: 30px;
 }
 
-.hidden {
+#parkCode {
 	display: none;
+}
+
+.detailsWrapper {
+	margin-top: 20px;
+}
+
+.imgDiv {
+	display: flex;
+	justify-content: center;
+}
+
+.detailsImg {
+	height: 400px;
+	width: 100%;
 }
