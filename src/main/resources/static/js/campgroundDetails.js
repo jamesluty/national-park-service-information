@@ -64,83 +64,66 @@ async function renderCampgrounds(){
 		
 		let htmlSegment = 
 			`<div class="campgroundDetails">
+				<div class="listHeader">
+					<h1 class="listTitle">${campground.name}</h1>	
+					<div>
+						<button class="btn btn-secondary" onclick="history.back()">Go Back</button>
+						<a class="btn btn-secondary" href="/">Home</a>
+					</div>									
+				</div>
 				<img class="detailImg" src="${campground.images[0].url}"/>
+
 				<div class="listDetails">
-					<div class="listHeader">
-						<h1 class="listTitle">${campground.name}</h1>					
+					<div class="detailDiv">							
+						<h5>Overview: </h5>							
+						<p>${campground.description}</p>
 					</div>
-					<table>
-						<tr>
-							<th></th>
-							<th></th>
-						</tr>
-						<tr>
-							<td>
-								<h5>Overview: </h5>
-							</td>
-							<td>							
-								${campground.description}
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<h5>Operating Hours: </h5>
-							</td>
-							<td>
-								<p class="mt-4 mb-4">${hours}</p>
-							</td>
-						</tr>						
-						<tr>
-							<td>
-								<h5>Reservation: </h5>
-							</td>
-							<td>
-								<p>${campground.reservationInfo}
-								<a class="btn btn-outline-primary" href="https://www.recreation.gov/camping/campgrounds/275085">Reserve</a>
-								<a class="btn btn-outline-dark" href="https://www.nps.gov/laro/planyourvisit/cg-regulations.htm">Regulations</a>
-								</p>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<h5>Fee: </h5>
-							</td>
-							<td>
-								<p>${fees}</p>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<h5>Amenities: </h5>
-							</td>
-							<td>
-								<p>${amenities}</p>
-							</td>
-						</tr>						
-						<tr>
-							<td>
-								<h5>Addresses: </h5>
-							</td>
-							<td>
-								<p>${addresses}</p>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<h5>Information: </h5>
-							</td>
-							<td>
+					<div class="detailDiv">
+						<h5>Operating Hours: </h5>			
+						<div class="pDiv">
+							<p>${hours}</p>
+						</div>
+					</div>						
+					<div class="detailDiv">							
+						<h5>Reservation:</h5>							
+						<div>
+							<p>${campground.reservationInfo}
+							<a class="btn btn-outline-primary" href="https://www.recreation.gov/camping/campgrounds/275085">Reserve</a>
+							<a class="btn btn-outline-dark" href="https://www.nps.gov/laro/planyourvisit/cg-regulations.htm">Regulations</a>
+							</p>
+						</div>
+					</div>
+					<div class="detailDiv">							
+						<h5>Fee:</h5>					
+						<div>
+							<p>${fees}</p>
+						</div>
+					</div>
+					<div class="detailDiv">				
+						<h5>Amenities:</h5>
+						<div>
+							<p>${amenities}</p>
+						</div>
+					</div>						
+					<div class="detailDiv">							
+						<h5>Addresses: </h5>
+						<div class="pDiv">
+							<p>${addresses}</p>
+						</div>
+					</div>
+					<div class="detailDiv">
+						<h5>Information:</h5>
+						<div class="pDiv">
+							<div>
 								<a class="btn btn-outline-success"https://www.recreation.gov/camping/campgrounds/246855">Website</a><br>
 								<a class="btn btn-outline-warning mt-2"https://www.nps.gov/laro/planyourvisit/maps.htm">Directions</a><br>
 								<i>*** ${campground.directionsOverview}</i>
-								<br>
-								<br>
-								Phone Number: ${campground.contacts.phoneNumbers[0].phoneNumber}<br>
-								Email Address: ${campground.contacts.emailAddresses[0].emailAddress}</p>
-							</td>
-						</tr>						
-
-					</table>
+							</div>
+							<br>
+							<p>Phone Number: ${campground.contacts.phoneNumbers[0].phoneNumber}<br>
+							Email Address: ${campground.contacts.emailAddresses[0].emailAddress}</p>
+						</div>
+					</div>						
 				</div>
 			</div>`;
 		html = htmlSegment;

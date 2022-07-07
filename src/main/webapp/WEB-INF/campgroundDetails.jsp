@@ -14,15 +14,9 @@
 	<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
 </head>
 <body class="">
-	<div class="nav-bar d-flex justify-content-end">
-		<button class="btn btn-secondary" onclick="history.back()">Go Back</button>&nbsp
-		<a class="btn btn-secondary" href="/">Home</a>
-	</div>
+
 	<div class="container"></div>
-	
-	
-	
-	
+		
 	<p id="id">${id }</p>
 	<!-- <!-- JavaScript Link -->	
 	<script type="text/javascript" src="/js/campgroundDetails.js"></script>

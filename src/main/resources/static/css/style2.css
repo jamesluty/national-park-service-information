@@ -85,3 +85,26 @@
 	height: 600px;
 	width: 100%;
 }
+
+.pDiv {
+	display: flex;
+	flex-direction: column;
+}
+
+.detailDiv {
+	display: flex;
+}
+
+.detailDiv h5 {
+	flex: 1;
+}
+
+.detailDiv div, .detailDiv > p {
+	flex: 5;
+}
+
+.pDiv {
+	display: flex;
+	flex-direction: column;
+}
+
