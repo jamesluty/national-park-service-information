@@ -1,6 +1,3 @@
-/**
- * 
- */
 async function getParks(){
 	let parkCode = document.getElementById("parkCode").innerText;
 	
@@ -68,6 +65,7 @@ async function renderParks(){
 					<h1 class="listTitle">${park.fullName}</h1>
 					<div>
 						<button class="btn btn-secondary" onclick="history.back()">Go Back</button>
+						<a class="btn btn-secondary" href="/">Home</a>
 					</div>
 				</div>
 				<div class="imgDiv">
@@ -130,29 +128,25 @@ async function renderParks(){
 
 renderParks();
 
-async function imgRight(){
-	let parks = await getParks();
-	let allImgs = parks[0].images;
-	if(count === allImgs.length - 1){
+
+function imgRight(){
+	if(count === images.length - 1){
 		count = 0;
 	} else {
 		count++;	
 	}
 	
 	console.log(count);
-	document.getElementById("detailsImg").src = allImgs[count].url;
+	document.getElementById("detailsImg").src = images[count];
 }
 
-async function imgLeft(){
-	let parks = await getParks();
-	let allImgs = parks[0].images;
-	
+function imgLeft(){
 	if(count === 0){
-		count = allImgs.length - 1;
+		count = images.length - 1;
 	} else {
 		count--;
 	}
 	
 	console.log(count);
-	document.getElementById("detailsImg").src = allImgs[count].url;
+	document.getElementById("detailsImg").src = images[count];
 }
