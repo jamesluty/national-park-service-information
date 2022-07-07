@@ -39,7 +39,7 @@ async function renderParks(){
 		})
 		park.operatingHours.forEach(item => {
 			let itemHtml =
-			`<h3>${item.name}</h3>
+			`<h5>${item.name}</h5>
 			<p>Sunday - ${item.standardHours.sunday}<br>
 			Monday - ${item.standardHours.monday}<br>
 			Tuesday - ${item.standardHours.tuesday}<br>
@@ -53,7 +53,7 @@ async function renderParks(){
 		})
 		park.addresses.forEach(address => {
 			let adrHtml =
-			`<h3>${address.type}</h3>
+			`<h5>${address.type}</h5>
 				<p>${address.line1}, ${address.city}, ${address.stateCode} ${address.postalCode}`;
 			addresses += adrHtml;
 		})
@@ -69,45 +69,45 @@ async function renderParks(){
 					</div>
 				</div>
 				<div class="imgDiv">
-					<button class="btn btn-secondary" onclick="imgLeft()">Prev</button>
+					<button class="btn btn-secondary" onclick="imgLeft()"><</button>
 					<div id="rotateImg">
 						<img id="detailsImg" src="${park.images[count].url}"/>
 					</div>
-					<button class="btn btn-secondary" onclick="imgRight()">Next</button>
+					<button class="btn btn-secondary" onclick="imgRight()">></button>
 				</div>
 				<div class="listDetails">
 					<div class="detailDiv">
-						<h3>Park Details:</h3>
+						<h5>Park Details:</h5>
 						<p>${park.description}</p>
 					</div>
 					<div class="detailDiv">
-						<h3>Activities:</h3>
+						<h5>Activities:</h5>
 						<p>${strActivities}</p>
 					</div>
 					<div class="detailDiv">
-						<h3>Topics:</h3>
+						<h5>Topics:</h5>
 						<p>${strTopics}</p>
 					</div>
 					<div class="detailDiv">
-						<h3>Entrance Fees:</h3>
+						<h5>Entrance Fees:</h5>
 						<div class="pDiv">
 							${fees}
 						</div>
 					</div>
 					<div class="detailDiv">
-						<h3>Operating Hours:</h3>
+						<h5>Operating Hours:</h5>
 						<div class="pDiv">
 							${hours}
 						</div>
 					</div>
 					<div class="detailDiv">
-						<h3>Addresses:  </h3>
+						<h5>Addresses:  </h5>
 						<div class="pDiv">
 							${addresses}
 						</div>
 					</div>
 					<div class="detailDiv">
-						<h3>Information:</h3>
+						<h5>Information:</h5>
 						<div class="pDiv">
 							<div>
 								<a class="link btn btn-outline-primary" href="${park.url}">Website</a><br>

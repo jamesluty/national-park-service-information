@@ -68,6 +68,7 @@
 	background-color: white;
 	padding: 20px;
 	opacity: 85%;
+	overflow: auto;
 }
 
 .listTitle {
@@ -99,28 +100,28 @@
 	align-items: center;
 	display: flex;
 	gap: 20px;
-	justify-content: space-between;
+	justify-content: center;
 }
 
 #detailsImg {
-	height: 400px;
+	height: 450px;
 	width: 100%;
 }
 
 #rotateImg {
-	width: 100%;
+	width: 80%;
 }
 
 .detailDiv {
 	display: flex;
 }
 
-.detailDiv h3 {
+.detailDiv h5 {
 	flex: 1;
 }
 
 .detailDiv div, .detailDiv > p {
-	flex: 3;
+	flex: 5;
 }
 
 .pDiv {
@@ -130,4 +131,13 @@
 
 .link {
 	margin-bottom: 10px;
+}
+
+.btn {
+	margin-bottom: 5px;
+}
+
+.sectionHeader {
+	flex: 1;
+	font-size: 20pt;
 }
