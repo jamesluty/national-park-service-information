@@ -7,17 +7,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Campground Details</title>
 <!-- CSS Link -->
 	<link rel="stylesheet" type="text/css" href="/css/style2.css">	
 <!-- <!-- Bootstrap Link -->
 	<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
 </head>
-<body class="">
-
-	<div class="container"></div>
-		
-	<p id="id">${id }</p>
+<body>
+	<div class="detailsWrapper">
+		<p id="id">${id }</p>
+		<div class="container"></div>
+	</div>
 	<!-- <!-- JavaScript Link -->	
 	<script type="text/javascript" src="/js/campgroundDetails.js"></script>
 </body>

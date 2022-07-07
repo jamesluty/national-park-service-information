@@ -75,15 +75,32 @@
 	justify-content: center;
 }
 
+/****************  DETAILS CAMPGROUNDS Page (IMAGE) ****************/
+
+#detailsImg {
+	height: 450px;
+	width: 100%;
+}
+
+#rotateImg {
+	width: 80%;
+}
+
+.imgDiv {
+	align-items: center;
+	display: flex;
+	gap: 20px;
+	justify-content: center;
+}
+
 /****************  DETAILS CAMPGROUNDS Page *******************/
+
+.detailsWrapper {
+	margin-top: 20px;
+}
 
 #id {
 	display: none;
-}
-
-.detailImg {
-	height: 600px;
-	width: 100%;
 }
 
 .pDiv {

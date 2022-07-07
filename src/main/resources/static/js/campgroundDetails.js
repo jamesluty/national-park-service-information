@@ -9,6 +9,9 @@ async function getCampgrounds(){
 	}	
 }
 
+let photo = [];
+let count = 0;
+
 async function renderCampgrounds(){
 	let campgrounds = await getCampgrounds();
 	let html = '';
@@ -24,7 +27,11 @@ async function renderCampgrounds(){
 		if (images[0]){
 			image = images[0].url;
 			console.log(image)
-		}	
+		}
+		
+		campground.images.forEach(image => {
+			photo.push(image.url);
+		})	
 		
 		campground.fees.forEach(fee => {
 			let feeHtml = 
@@ -71,8 +78,13 @@ async function renderCampgrounds(){
 						<a class="btn btn-secondary" href="/">Home</a>
 					</div>									
 				</div>
-				<img class="detailImg" src="${campground.images[0].url}"/>
-
+				<div class="imgDiv">
+					<button class="btn btn-secondary" onclick="imgLeft()"><</button>
+					<div id="rotateImg">					
+						<img id="detailsImg" src="${campground.images[0].url}"/>
+					</div>
+					<button class="btn btn-secondary" onclick="imgRight()">></button>
+				</div>
 				<div class="listDetails">
 					<div class="detailDiv">							
 						<h5>Overview: </h5>							
@@ -136,3 +148,25 @@ async function renderCampgrounds(){
 }
 
 renderCampgrounds();
+
+function imgRight(){
+	if(count === photo.length - 1){
+		count = 0;
+	} else {
+		count++;	
+	}
+	
+	console.log(count);
+	document.getElementById("detailsImg").src = photo[count];
+}
+
+function imgLeft(){
+	if(count === 0){
+		count = photo.length - 1;
+	} else {
+		count--;
+	}
+	
+	console.log(count);
+	document.getElementById("detailsImg").src = photo[count];
+}
