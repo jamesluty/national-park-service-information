@@ -18,9 +18,10 @@ public class ParksController {
 		states.add("WA");
 		states.add("OR");
 		states.add("ID");
+		states.add("CA");
 		ArrayList<String> searchType = new ArrayList<String>();
 		searchType.add("Campgrounds");
-		searchType.add("Parks");
+		searchType.add("National Parks");
 		model.addAttribute("searchType", searchType);
 		model.addAttribute("states", states);
 		return "index.jsp";

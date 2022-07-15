@@ -136,7 +136,6 @@ function imgRight(){
 		count++;	
 	}
 	
-	console.log(count);
 	document.getElementById("detailsImg").src = images[count];
 }
 
@@ -147,6 +146,5 @@ function imgLeft(){
 		count--;
 	}
 	
-	console.log(count);
 	document.getElementById("detailsImg").src = images[count];
 }
