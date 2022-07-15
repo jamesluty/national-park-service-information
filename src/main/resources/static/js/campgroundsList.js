@@ -24,7 +24,9 @@ async function renderCampgrounds(){
 		}
 		let htmlSegment = 
 			`<div class="campground">
-				<img class="listImg" src="${image}" alt="No Image Available"/>
+				<div class="imgSize">
+					<img class="listImg" src="${image}" alt="No Image Available"/>
+				</div>
 				<div class="listDetails">
 					<div class="listHeader">			
 						<h2 class="listTitle">${campground.name}</h2>

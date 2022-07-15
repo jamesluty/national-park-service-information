@@ -51,10 +51,15 @@
 	display: flex;
 	height: 300px;
 	margin-bottom: 20px;
+	width: 100%;
 }
 
 .listImg {
 	height: 100%;
+	width: 350px;
+}
+
+.imgSize {
 	width: 350px;
 }
 
@@ -64,6 +69,7 @@
 	padding: 20px;
 	opacity: 85%;
 	overflow: auto;
+	width: 100%;
 }
 
 .listTitle {
