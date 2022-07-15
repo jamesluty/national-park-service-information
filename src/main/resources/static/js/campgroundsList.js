@@ -16,9 +16,11 @@ async function renderCampgrounds(){
 	campgrounds.forEach(campground => {
 		let images = campground.images;
 		let image = "";
-		if (images[0]){
+		if (images.length>=1){
 			image = images[0].url;
 			console.log(image)
+		}else{
+			image = "https://vipvoice.files.wordpress.com/2021/06/arrowhead.jpg";
 		}
 		let htmlSegment = 
 			`<div class="campground">
