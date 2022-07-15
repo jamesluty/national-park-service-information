@@ -127,9 +127,8 @@ async function renderCampgrounds(){
 						<h5>Information:</h5>
 						<div class="pDiv">
 							<div>
-								<a class="btn btn-outline-success"https://www.recreation.gov/camping/campgrounds/246855">Website</a><br>
-								<a class="btn btn-outline-warning mt-2"https://www.nps.gov/laro/planyourvisit/maps.htm">Directions</a><br>
-								<i>*** ${campground.directionsOverview}</i>
+								<a class="btn btn-outline-success" href="${campground.url}">Website</a><br>
+								<a class="btn btn-outline-warning mt-2" href="${campground.directionsUrl}">Directions</a><br>
 							</div>
 							<br>
 							<p>Phone Number: ${campground.contacts.phoneNumbers[0].phoneNumber}<br>
