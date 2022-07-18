@@ -18,6 +18,7 @@
 	<title>National Parks</title>
 </head>
 <body class="parks-bg">
+	<p id="stateAbr">${stateAbr }</p>
 	<div class="homeLink">
 		<a class="btn btn-secondary" href="/">Home</a>
 	</div>

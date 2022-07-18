@@ -1,6 +1,6 @@
 
 async function getParks(){
-	let state = document.getElementById("state").innerText
+	let state = document.getElementById("stateAbr").innerText
 	
 	try {
 		let res = await fetch("/api/parks/" + state.substring(0,2));
