@@ -16,7 +16,7 @@ async function renderParks(){
 	parks.forEach(park => {
 		let htmlSegment = 
 			`<div class="park">
-				<div class=imgDiv>
+				<div class=listImgDiv>
 					<img class="listImg" src="${park.images[0].url}"/>
 				</div>
 				<div class="listDetails">
