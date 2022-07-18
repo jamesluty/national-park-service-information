@@ -10,7 +10,7 @@
 }
 
 .main-bg {
-	background-image: url("https://morethanjustparks.com/wp-content/uploads/2021/06/crater-lake.jpg");
+	background-image: url("https://www.themanual.com/wp-content/uploads/sites/9/2019/05/rocky-mountain-national-park-getty-images.jpg?fit=1500%2C1000&p=1");
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -24,15 +24,20 @@
 }
 
 .pageTitle {
+	color: white;
 	font-size: 60pt;
+	font-family: cursive;
 	text-align: center;
 	margin-bottom: 50px;
+	text-shadow: 3px 3px 3px black;
 }
 
 .subTitle {
+	color: white;
 	margin-top: 30px;
 	margin-bottom: 20px;
 	text-align: center;
+	text-shadow: 3px 3px 3px black;
 }
 
 .formDiv {
@@ -56,6 +61,11 @@
 	display: flex;
 	height: 300px;
 	margin-bottom: 20px;
+	width: 100%;
+}
+
+.imgDiv {
+	width: 350px;
 }
 
 .listImg {
@@ -70,6 +80,7 @@
 	padding: 20px;
 	opacity: 85%;
 	overflow: auto;
+	width: 100%
 }
 
 .listTitle {

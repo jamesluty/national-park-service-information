@@ -19,17 +19,18 @@
 </head>
 <body class="main-bg">
 	<div class="mainWrapper">
-		<h1 class="pageTitle">Escape Outdoors</h1>
-		<h3 class="subTitle">Select a State</h3>
+		<h1 class="pageTitle">Outdoor Adventures</h1>
 		
 		<div class="formDiv">
 			<form class="switchForm" action="/switch" method="post">
 				<select name="state">
-					<c:forEach var="state" items="${states }">
+					<option value="" disabled selected hidden>-- Select a state --</option>
+					<c:forEach var="state" items="${statesFull }">
 						<option value="${state }">${state }</option>
 					</c:forEach>
 				</select>
 				<select name="type">
+					<option value="" disabled selected hidden>-- Select an activity --</option>
 					<c:forEach var="searchType" items="${searchType }">
 						<option value="${searchType }">${searchType }</option>
 					</c:forEach>

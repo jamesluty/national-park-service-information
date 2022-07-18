@@ -19,10 +19,10 @@
 </head>
 <body class="parks-bg">
 	<div class="homeLink">
-		<a class="btn btn-light" href="/">Home</a>
+		<a class="btn btn-secondary" href="/">Home</a>
 	</div>
 	<div class="mainWrapper">
-		<h1 class="pageTitle">National Parks in <span id=state>${state}</span></h1>
+		<h1 class="listTitle">National Parks in <span id=state>${state}</span></h1>
 		<div class="container"></div>
 	</div>
 	<script src="/js/parkList.js"></script>
