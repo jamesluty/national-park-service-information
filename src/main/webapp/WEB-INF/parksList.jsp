@@ -23,7 +23,7 @@
 		<a class="btn btn-secondary" href="/">Home</a>
 	</div>
 	<div class="mainWrapper">
-		<h1 class="listTitle">National Parks in <span id=state>${state}</span></h1>
+		<h1 class="listTitle">National Parks in <span id=state>${stateFull}</span></h1>
 		<div class="container"></div>
 	</div>
 	<script src="/js/parkList.js"></script>

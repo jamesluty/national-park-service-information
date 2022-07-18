@@ -21,7 +21,7 @@ async function renderParks(){
 				</div>
 				<div class="listDetails">
 					<div class="listHeader">
-						<h1 class="listTitle">${park.name}</h1>
+						<h2 class="listTitle">${park.name}</h2>
 						<div>
 							<a class="btn btn-dark" href="/parks/details/${park.parkCode}">View details</a>
 						</div>						

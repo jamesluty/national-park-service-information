@@ -17,7 +17,7 @@
 }
 
 .parks-bg {
-	background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUMuKU-fT8d2ahkFlGjP2ltXjqaSlZMfXzYw&usqp=CAU");
+	background-image: url("https://visitutahkenticoprod.blob.core.windows.net/cmsroot/visitutah/media/site-assets/three-season-photography/mighty-5/arches/arches-national-park_mighty-five_payne_angie_2020.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -84,7 +84,9 @@
 }
 
 .listTitle {
+	color: white;
 	text-align: center;
+	margin-bottom: 30px
 }
 
 .homeLink {
@@ -101,6 +103,10 @@
 }
 
 #parkCode {
+	display: none;
+}
+
+#stateAbr {
 	display: none;
 }
 
