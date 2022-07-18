@@ -1,5 +1,6 @@
 package com.jamesluty.nationalparkinfo.controllers;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,17 +12,11 @@ public class CampgroundsController {
 	
 	@GetMapping("/campgrounds/{state}")
 	public String state(@PathVariable("state") String state, Model model) {
-		String stateFull;
-		if(state.equals("WA")) {
-			stateFull = "Washington";
-		} else if (state.equals("OR")) {
-			stateFull = "Oregon";
-		} else {
-			stateFull = "Idaho";
-		}
-		model.addAttribute("state", stateFull);
-		model.addAttribute("stateAbr", state);
+		String stateAbr = StringUtils.substringBetween(state, "(", ")");
+		String stateFull = StringUtils.substringBefore(state, " ");
 		
+		model.addAttribute("stateAbr", stateAbr);
+		model.addAttribute("stateFull", stateFull);
 		return "campgroundsList.jsp";
 	}
 	

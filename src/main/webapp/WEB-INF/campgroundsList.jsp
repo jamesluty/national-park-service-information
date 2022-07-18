@@ -21,11 +21,12 @@
 <title>Pacific Northwest Campgrounds</title>
 </head>
 <body class="campgroundsList-bg text-white">
+	<p id="stateAbr">${stateAbr }</p>
 	<div class="nav-bar d-flex justify-content-end">
 		<a class="btn btn-secondary" href="/">Home</a>
 	</div>
 	<div class="mainWrapper">
-		<h1 class="pageTitle">All Campgrounds in <span id=state>${state}</span></h1>
+		<h1 class="pageTitle">All Campgrounds in <span id=state>${stateFull}</span></h1>
 		<div class="container"></div>
 	</div>
 	<script src="/js/campgroundsList.js"></script>
