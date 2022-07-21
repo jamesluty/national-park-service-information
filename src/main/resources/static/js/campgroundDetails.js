@@ -24,6 +24,7 @@ async function renderCampgrounds(){
 			let hours = "";
 			let reservationUrl = "";
 			let regulationsurl = "";
+			let reservationInfo = "";
 			let addresses = "";
 			let url = "";
 			let directionsUrl = "";
@@ -71,14 +72,15 @@ async function renderCampgrounds(){
 			if (campground.operatingHours.length>=1){
 				campground.operatingHours.forEach(item => {
 					let itemHtml =			
-					`Sunday - ${item.standardHours.sunday}<br>
+					`<h5>${item.name}</h5>
+					<p class="margin-zero">Sunday - ${item.standardHours.sunday}<br>
 					Monday - ${item.standardHours.monday}<br>
 					Tuesday - ${item.standardHours.tuesday}<br>
 					Wednesday - ${item.standardHours.wednesday}<br>
 					Thursday - ${item.standardHours.thursday}<br>
 					Friday - ${item.standardHours.friday}<br>
-					Saturday - ${item.standardHours.saturday}<br>
-					<i>*** ${item.description}</i>`;
+					Saturday - ${item.standardHours.saturday}</p>
+					<p class="margin-desc"><i>*** ${item.description}</i></p>`;
 					hours += itemHtml;
 				})				
 			}else{
@@ -88,12 +90,16 @@ async function renderCampgrounds(){
 
 			if (campground.reservationUrl.length>=1){
 				reservationUrl = `<a class="btn btn-outline-primary" href="${campground.reservationUrl}">Reservation</a><br>`
+			}else{
+				reservationUrl = "<i>Not Available</i>";
 			}	
 			
 			if (campground.regulationsurl.length>=1){
 				regulationsurl = `<a class="btn btn-outline-dark" href="${campground.regulationsurl}">Regulations</a><br>`
-			}	
-
+			}
+			if (campground.reservationInfo.length>=1){
+				reservationInfo = "*** " + campground.reservationInfo;
+			}
 			
 			let campsites = 
 				`Total Sites: ${campground.campsites.totalSites}</br>
@@ -112,20 +118,24 @@ async function renderCampgrounds(){
 				Firewood for Sale - <i>${campground.amenities.firewoodForSale}</i><br>`
 				
 							
-			campground.addresses.forEach(address => {
-				if (address.line1.length>=1){
-					let adrHtml =
-					`<h5>${address.type}</h5>
-					<p>${address.line1} ${address.line2}, ${address.city}, ${address.stateCode}, ${address.postalCode}</p>`;
-					addresses += adrHtml;
-				} else {
-					let adrHtml =
-					`<h5>${address.type}</h5>
-					<p>${address.city}, ${address.stateCode}, ${address.postalCode}</p>`;
-					addresses += adrHtml;
-				}
-				
-			})
+			if (campground.addresses.length>0){
+				campground.addresses.forEach(address => {
+					if (address.line1.length>=1){
+						let adrHtml =
+						`<h5>${address.type}</h5>
+						<p>${address.line1} ${address.line2}, ${address.city}, ${address.stateCode}, ${address.postalCode}</p>`;
+						addresses += adrHtml;
+					} else{
+						let adrHtml =
+						`<h5>${address.type}</h5>
+						<p>${address.city}, ${address.stateCode}, ${address.postalCode}</p>`;
+						addresses += adrHtml;
+					}
+					
+				})
+			}else{
+				addresses = "<i>Not Available</i>";
+			}
 
 
 			
@@ -159,9 +169,9 @@ async function renderCampgrounds(){
 							<p>${campground.description}</p>
 						</div>
 						<div class="detailDiv">
-							<h5>Operating Hours: </h5>			
+							<h5>Operating Hours: </h5>		
 							<div class="pDiv">
-								<p>${hours}</p>
+								${hours}
 							</div>
 						</div>						
 						<div class="detailDiv">							
@@ -170,7 +180,7 @@ async function renderCampgrounds(){
 								<div class="d-flex align-items-center mb-2">
 									${reservationUrl}&nbsp${regulationsurl}
 								</div>
-								<p><i> *** ${campground.reservationInfo}</i></p>
+								<p><i> ${reservationInfo}</i></p>
 							</div>
 						</div>
 						<div class="detailDiv">							

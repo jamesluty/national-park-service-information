@@ -44,10 +44,10 @@
 }
 
 .listHeader {
-	align-items: center;
+	align-items: top;
 	display: flex;
 	justify-content: space-between;
-	margin-bottom: 30px;
+	margin-bottom: 10px;
 }
 
 .campground {
@@ -81,8 +81,12 @@
 }
 
 .btnDiv {
+	align-items: top;
+
 	display: flex;
 	justify-content: center;
+	width: 150px;
+	height: 40px;
 }
 
 /****************  DETAILS CAMPGROUNDS Page (IMAGE) ****************/
@@ -104,6 +108,7 @@
 }
 
 /****************  DETAILS CAMPGROUNDS Page *******************/
+
 
 .detailsWrapper {
 	margin-top: 20px;
@@ -133,5 +138,15 @@
 .pDiv {
 	display: flex;
 	flex-direction: column;
+}
+
+.margin-zero {
+	margin: 0px;
+	padding: 0px;
+}
+
+.margin-desc {
+	margin-top: 10px;
+	padding: 0px;
 }
 
