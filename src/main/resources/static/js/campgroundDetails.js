@@ -22,6 +22,8 @@ async function renderCampgrounds(){
 			let phoneNumber = "";
 			let emailAddress = "";
 			let hours = "";
+			let reservationUrl = "";
+			let regulationsurl = "";
 			let addresses = "";
 			let url = "";
 			let directionsUrl = "";
@@ -76,13 +78,21 @@ async function renderCampgrounds(){
 					Thursday - ${item.standardHours.thursday}<br>
 					Friday - ${item.standardHours.friday}<br>
 					Saturday - ${item.standardHours.saturday}<br>
-					<br>
 					<i>*** ${item.description}</i>`;
 					hours += itemHtml;
 				})				
 			}else{
 				hours = "<i>Not Available</i>";
 			}
+			
+
+			if (campground.reservationUrl.length>=1){
+				reservationUrl = `<a class="btn btn-outline-primary" href="${campground.reservationUrl}">Reservation</a><br>`
+			}	
+			
+			if (campground.regulationsurl.length>=1){
+				regulationsurl = `<a class="btn btn-outline-dark" href="${campground.regulationsurl}">Regulations</a><br>`
+			}	
 
 			
 			let campsites = 
@@ -92,7 +102,16 @@ async function renderCampgrounds(){
 				Electrical Hookups: ${campground.campsites.electricalHookups}</br>
 				RV: ${campground.campsites.rvOnly}</br>
 				Boat Access: ${campground.campsites.walkBoatTo}</br>`
-			
+							
+
+			let amenities = 
+				`Toilets - <i>${campground.amenities.toilets}</i><br>
+				Internet Connectivity - <i>${campground.amenities.internetConnectivity}</i><br>
+				Showers - <i>${campground.amenities.showers}</i><br>
+				Potable Water - <i>${campground.amenities.potableWater}</i><br>
+				Firewood for Sale - <i>${campground.amenities.firewoodForSale}</i><br>`
+				
+							
 			campground.addresses.forEach(address => {
 				if (address.line1.length>=1){
 					let adrHtml =
@@ -107,21 +126,15 @@ async function renderCampgrounds(){
 				}
 				
 			})
-			
-			
-			let amenities = 
-				`Toilets - <i>${campground.amenities.toilets}</i><br>
-				Internet Connectivity - <i>${campground.amenities.internetConnectivity}</i><br>
-				Showers - <i>${campground.amenities.showers}</i><br>
-				Potable Water - <i>${campground.amenities.potableWater}</i><br>
-				Firewood for Sale - <i>${campground.amenities.firewoodForSale}</i><br>`
+
+
 			
 			if (campground.url.length>=1){
-				url = `<a class="btn btn-outline-success" href="${campground.url}">Website</a><br>`
+				url = `<a class="btn btn-outline-success" href="${campground.url}">Website</a>`
 			}	
 			
 			if (campground.directionsUrl.length>=1){
-				directionsUrl = `<a class="btn btn-outline-warning mt-2" href="${campground.directionsUrl}">Directions</a><br>`
+				directionsUrl = `<a class="btn btn-outline-warning" href="${campground.directionsUrl}">Directions</a>`
 			}	
 			
 			let htmlSegment = 
@@ -154,10 +167,10 @@ async function renderCampgrounds(){
 						<div class="detailDiv">							
 							<h5>Reservation:</h5>							
 							<div>
-								<p>${campground.reservationInfo}
-								<a class="btn btn-outline-primary" href="https://www.recreation.gov/camping/campgrounds/275085">Reserve</a>
-								<a class="btn btn-outline-dark" href="https://www.nps.gov/laro/planyourvisit/cg-regulations.htm">Regulations</a>
-								</p>
+								<div class="d-flex align-items-center mb-2">
+									${reservationUrl}&nbsp${regulationsurl}
+								</div>
+								<p><i> *** ${campground.reservationInfo}</i></p>
 							</div>
 						</div>
 						<div class="detailDiv">							
@@ -179,21 +192,19 @@ async function renderCampgrounds(){
 							</div>
 						</div>						
 						<div class="detailDiv">							
-							<h5>Addresses: </h5>
+							<h5>Address: </h5>
 							<div class="pDiv">
 								${addresses}
 							</div>
 						</div>
 						<div class="detailDiv">
 							<h5>Information:</h5>
-							<div class="pDiv">
-								<div>
-									${url}
-									${directionsUrl}
-								</div>
-								<br>
-								<p>Phone Number: ${phoneNumber}<br>
-								Email Address: ${emailAddress}</p>
+							<div>
+								<div class="d-flex align-items-center mt-2 mb-2">
+									${url}&nbsp${directionsUrl}
+								</div>	
+								<p><b>Phone Number:</b> ${phoneNumber}<br>
+								<b>Email Address:</b> ${emailAddress}</p>
 							</div>
 						</div>						
 					</div>

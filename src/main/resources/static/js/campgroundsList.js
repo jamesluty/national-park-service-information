@@ -30,6 +30,7 @@ async function renderCampgrounds(){
 				<div class="listDetails">
 					<div class="listHeader">			
 						<h2 class="listTitle">${campground.name}</h2>
+						<p>${campground.addresses.city}, ${campground.addresses.stateCode}</p>
 						<div class="btnDiv">
 							<a class="btn btn-dark" href="/campgrounds/details/${campground.id}">View details</a>
 						</div>
