@@ -47,7 +47,7 @@ async function renderParks(){
 			Thursday - ${item.standardHours.thursday}<br>
 			Friday - ${item.standardHours.friday}<br>
 			Saturday - ${item.standardHours.saturday}</p>
-			<span class="description">***<i>${item.description}</i><span>
+			<span class="description">*** <i>${item.description}</i><span>
 			<p></p>`;
 			hours += itemHtml;
 		})
