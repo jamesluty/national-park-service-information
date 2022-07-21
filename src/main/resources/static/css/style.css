@@ -84,9 +84,14 @@
 }
 
 .listItemTitle {
-	color: blac;
+	color: black;
 	text-align: center;
 	margin-bottom: 30px
+}
+
+.detailsTitle {
+	color: black;
+	margin-bottom: 30px;
 }
 
 .listTitle {
@@ -102,10 +107,10 @@
 }
 
 .listHeader {
-	align-items: center;
+	align-items: top;
 	display: flex;
 	justify-content: space-between;
-	margin-bottom: 30px;
+	margin-bottom: 5px;
 }
 
 #parkCode {
@@ -136,6 +141,11 @@
 	width: 80%;
 }
 
+.detailBtnDiv {
+	height: 40px;
+	width: 150px;
+}
+
 .detailDiv {
 	display: flex;
 }
@@ -164,4 +174,9 @@
 .sectionHeader {
 	flex: 1;
 	font-size: 20pt;
+}
+
+.siteDiv {
+	display: flex;
+	gap: 3px;
 }

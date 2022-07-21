@@ -21,8 +21,8 @@ async function renderParks(){
 				</div>
 				<div class="listDetails">
 					<div class="listHeader">
-						<h2 class="listItemTitle">${park.name}</h2>
-						<div>
+						<h3 class="listItemTitle">${park.name}</h3>
+						<div class=detailBtnDiv>
 							<a class="btn btn-dark" href="/parks/details/${park.parkCode}">View details</a>
 						</div>						
 					</div>

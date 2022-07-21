@@ -62,7 +62,7 @@ async function renderParks(){
 		let htmlSegment = 
 			`<div class="parkDetails">						
 				<div class="listHeader">
-					<h1 class="listTitle">${park.fullName}</h1>
+					<h1 class="detailsTitle">${park.fullName}</h1>
 					<div>
 						<button class="btn btn-secondary" onclick="history.back()">Go Back</button>
 						<a class="btn btn-secondary" href="/">Home</a>
@@ -109,12 +109,12 @@ async function renderParks(){
 					<div class="detailDiv">
 						<h5>Information:</h5>
 						<div class="pDiv">
-							<div>
-								<a class="link btn btn-outline-primary" href="${park.url}">Website</a><br>
-								<a class="link btn btn-outline-dark"" href="${park.directionsUrl}">Directions</a><br>
+							<div class=siteDiv>
+								<a class="link btn btn-outline-success" href="${park.url}">Website</a><br>
+								<a class="link btn btn-outline-warning" href="${park.directionsUrl}">Directions</a><br>
 							</div>
-							<p>Phone Number: ${park.contacts.phoneNumbers[0].phoneNumber}<br>
-							Email Address: ${park.contacts.emailAddresses[0].emailAddress}</p>
+							<p><b>Phone Number:</b> ${park.contacts.phoneNumbers[0].phoneNumber}<br>
+							<b>Email Address:</b> ${park.contacts.emailAddresses[0].emailAddress}</p>
 						</div>
 					</div>
 				</div>
