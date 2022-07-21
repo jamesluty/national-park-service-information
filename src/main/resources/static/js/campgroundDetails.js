@@ -150,7 +150,7 @@ async function renderCampgrounds(){
 			let htmlSegment = 
 				`<div class="campgroundDetails">
 					<div class="listHeader">
-						<h1 class="listTitle">${campground.name}</h1>	
+						<h1 class="detailsTitle">${campground.name}</h1>	
 						<div>
 							<button class="btn btn-secondary" onclick="history.back()">Go Back</button>
 							<a class="btn btn-secondary" href="/">Home</a>
