@@ -89,6 +89,10 @@
 	height: 40px;
 }
 
+.text-color {
+	color: black;
+}
+
 /****************  DETAILS CAMPGROUNDS Page (IMAGE) ****************/
 
 #detailsImg {
