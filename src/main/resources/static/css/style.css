@@ -133,7 +133,9 @@
 }
 
 .required {
-	color: blue;
+	background-color: white;
+	color: red;
+	opacity: 85%;
 }
 
 #detailsImg {
