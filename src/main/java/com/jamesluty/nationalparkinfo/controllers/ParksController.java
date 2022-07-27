@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import net.bytebuddy.implementation.bind.annotation.Default;
+
 @Controller
 public class ParksController {
 
@@ -75,7 +77,74 @@ public class ParksController {
 	}
 	
 	@PostMapping("/switch")
-	public String switcher(@RequestParam("state") String state, @RequestParam("type") String type) {
+	public String switcher(@RequestParam(value="state", required=false) String state, @RequestParam(value="type", required=false) String type, Model model) {
+		ArrayList<String> statesFull = new ArrayList<String>();
+		statesFull.add("Alabama (AL)");
+		statesFull.add("Alaska (AK)");
+		statesFull.add("Arizona (AZ)");
+		statesFull.add("Arkansas (AR)");
+		statesFull.add("California (CA)");
+		statesFull.add("Colorado (CO)");
+		statesFull.add("Connecticut (CT)");
+		statesFull.add("Delaware (DE)");
+		statesFull.add("Florida (FL)");
+		statesFull.add("Georgia (GA)");
+		statesFull.add("Hawaii (HI)");
+		statesFull.add("Idaho (ID)");
+		statesFull.add("Illinois (IL)");
+		statesFull.add("Indiana (IN)");
+		statesFull.add("Iowa (IA)");
+		statesFull.add("Kansas (KS)");
+		statesFull.add("Kentucky (KY)");
+		statesFull.add("Louisiana (LA)");
+		statesFull.add("Maine (ME)");
+		statesFull.add("Maryland (MD)");
+		statesFull.add("Massachusetts (MA)");
+		statesFull.add("Michigan (MI)");
+		statesFull.add("Minnesota (MN)");
+		statesFull.add("Mississippi (MS)");
+		statesFull.add("Missouri (MO)");
+		statesFull.add("Montana (MT)");
+		statesFull.add("Nebraska (NE)");
+		statesFull.add("Nevada (NV)");
+		statesFull.add("New Hampshire (NH)");
+		statesFull.add("New Jersey (NJ)");
+		statesFull.add("New Mexico (NM)");
+		statesFull.add("New York (NY)");
+		statesFull.add("North Carolina (NC)");
+		statesFull.add("North Dakota (ND)");
+		statesFull.add("Ohio (OH)");
+		statesFull.add("Oklahoma (OK)");
+		statesFull.add("Oregon (OR)");
+		statesFull.add("Pennsylvania (PA)");
+		statesFull.add("Rhode Island (RI)");
+		statesFull.add("South Carolina (SC)");
+		statesFull.add("South Dakota (SD)");
+		statesFull.add("Tennessee (TN)");
+		statesFull.add("Texas (TX)");
+		statesFull.add("Utah (UT)");
+		statesFull.add("Vermont (VT)");
+		statesFull.add("Virginia (VA)");
+		statesFull.add("Washington (WA)");
+		statesFull.add("West Virginia (WV)");
+		statesFull.add("Wisconsin (WI)");
+		statesFull.add("Wyoming (WY)");
+		ArrayList<String> searchType = new ArrayList<String>();
+		searchType.add("Campgrounds");
+		searchType.add("National Parks");
+		model.addAttribute("searchType", searchType);
+		model.addAttribute("statesFull", statesFull);
+		if(state == null && type == null) {
+			model.addAttribute("stateReq", "<p class='required'>State is required!</p>");
+			model.addAttribute("typeReq", "<p class='required'>Activity is required!</p>");
+			return "index.jsp";
+		} else if(state == null) {
+			model.addAttribute("stateReq", "<p class='required'>State is required!</p>");
+			return "index.jsp";
+		} else if(type == null) {
+			model.addAttribute("typeReq", "<p class='required'>Activity is required!</p>");
+			return "index.jsp";
+		}
 		if(type.equals("Campgrounds")) {
 			return "redirect:/campgrounds/" + state;
 		} else {

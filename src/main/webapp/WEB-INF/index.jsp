@@ -29,12 +29,14 @@
 						<option value="${state }">${state }</option>
 					</c:forEach>
 				</select>
+				${stateReq }
 				<select name="type">
 					<option value="" disabled selected hidden>-- Select an activity --</option>
 					<c:forEach var="searchType" items="${searchType }">
 						<option value="${searchType }">${searchType }</option>
 					</c:forEach>
 				</select>
+				${typeReq }
 				<button class="btn btn-dark">Submit</button>
 			</form>
 		</div>

@@ -132,6 +132,10 @@
 	justify-content: center;
 }
 
+.required {
+	color: blue;
+}
+
 #detailsImg {
 	height: 450px;
 	width: 100%;
