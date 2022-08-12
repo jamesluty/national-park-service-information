@@ -230,23 +230,27 @@ async function renderCampgrounds(){
 renderCampgrounds();
 
 function imgRight(){
-	if(count === photo.length - 1){
-		count = 0;
-	} else {
-		count++;	
+	if(photo.length>0){
+		if(count === photo.length - 1){
+			count = 0;
+		} else {
+			count++;	
+		}
+		
+		console.log(count);
+		document.getElementById("detailsImg").src = photo[count];
 	}
-	
-	console.log(count);
-	document.getElementById("detailsImg").src = photo[count];
 }
 
 function imgLeft(){
-	if(count === 0){
-		count = photo.length - 1;
-	} else {
-		count--;
+	if(photo.length>0){
+		if(count === 0){
+			count = photo.length - 1;
+		} else {
+			count--;
+		}
+		
+		console.log(count);
+		document.getElementById("detailsImg").src = photo[count];
 	}
-	
-	console.log(count);
-	document.getElementById("detailsImg").src = photo[count];
 }
