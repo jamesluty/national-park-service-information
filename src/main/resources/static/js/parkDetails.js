@@ -22,6 +22,8 @@ async function renderParks(){
 		let topics = [];
 		let hours = "";
 		let addresses = "";
+		let phoneNumber = "";
+		let emailAddress = "";
 		park.images.forEach(image => {
 			images.push(image.url);
 		})
@@ -37,6 +39,16 @@ async function renderParks(){
 		park.topics.forEach(topic => {
 			topics.push(`<span class="btn btn-dark">${topic.name}</span>`)
 		})
+		if(park.contacts.phoneNumbers.length>0){
+			phoneNumber = park.contacts.phoneNumbers[0].phoneNumber;
+		} else {
+			phoneNumber = "<i>Not Available</i>"
+		}
+		if(park.contacts.emailAddresses.length>0){
+			emailAddress = park.contacts.emailAddresses[0].emailAddress;
+		} else {
+			emailAddress = "<i>Not Available</i>"
+		}
 		park.operatingHours.forEach(item => {
 			let itemHtml =
 			`<h5>${item.name}</h5>
@@ -113,8 +125,8 @@ async function renderParks(){
 								<a class="link btn btn-outline-success" href="${park.url}">Website</a><br>
 								<a class="link btn btn-outline-warning" href="${park.directionsUrl}">Directions</a><br>
 							</div>
-							<p><b>Phone Number:</b> ${park.contacts.phoneNumbers[0].phoneNumber}<br>
-							<b>Email Address:</b> ${park.contacts.emailAddresses[0].emailAddress}</p>
+							<p><b>Phone Number:</b> ${phoneNumber}<br>
+							<b>Email Address:</b> ${emailAddress}</p>
 						</div>
 					</div>
 				</div>
@@ -130,21 +142,25 @@ renderParks();
 
 
 function imgRight(){
-	if(count === images.length - 1){
-		count = 0;
-	} else {
-		count++;	
+	if(images.length>0){
+		if(count === images.length - 1){
+			count = 0;
+		} else {
+			count++;	
+		}
+		
+		document.getElementById("detailsImg").src = images[count];
 	}
-	
-	document.getElementById("detailsImg").src = images[count];
 }
 
 function imgLeft(){
-	if(count === 0){
-		count = images.length - 1;
-	} else {
-		count--;
+	if(images.length>0){
+		if(count === 0){
+			count = images.length - 1;
+		} else {
+			count--;
+		}
+		
+		document.getElementById("detailsImg").src = images[count];
 	}
-	
-	document.getElementById("detailsImg").src = images[count];
 }
