@@ -60,11 +60,11 @@
 
 .listImg {
 	height: 100%;
-	width: 350px;
+	width: 100%;
 }
 
 .imgSize {
-	width: 350px;
+	width: 50%;
 }
 
 .listDetails {
