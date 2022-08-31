@@ -64,14 +64,35 @@
 	width: 100%;
 }
 
+@media only screen and (max-width: 600px){
+	.park {
+		border: 3px solid black;
+		display: flex;
+		height: 150px;
+		font-size: 10pt;
+		margin-bottom: 10px;
+		width: 100%;
+	}
+	
+	.listItemTitle {
+		font-size: 14pt;
+	}
+	
+	.smBtn {
+		font-size: 8pt;
+		height: 30px;
+	}
+}
+
 .listImgDiv {
-	width: 350px;
+	height: 100%;
+	width: 50%;
 }
 
 .listImg {
 	align-items: center;
 	height: 100%;
-	width: 350px;
+	width: 100%;
 }
 
 .listDetails {
@@ -80,7 +101,7 @@
 	padding: 20px;
 	opacity: 85%;
 	overflow: auto;
-	width: 100%
+	width: 100%;
 }
 
 .listItemTitle {
